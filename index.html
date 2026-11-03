@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奥苑 蓮冬 | Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            cyan: '#00f2fe',
+                            purple: '#7928ca',
+                            pink: '#ff0080',
+                            dark: '#0a0c10',
+                            card: '#121620',
+                            border: '#1f293d'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons (最新版へアップデート) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- 外部CSSファイルの読み込み -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="grid-bg min-h-screen selection:bg-emerald-400 selection:text-black">
+
+    <!-- Ambient Gradient Background Lights -->
+    <div class="fixed top-0 left-1/4 w-96 h-96 bg-brand-purple/20 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+    <div class="fixed bottom-1/3 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-panel border-b border-brand-border/40">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold tracking-wider text-white flex items-center gap-2">
+                <span>PORTFOLIO<span class="text-brand-cyan">.</span></span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                <a href="#about" class="hover:text-brand-cyan transition-colors">About</a>
+                <a href="#skills" class="hover:text-brand-cyan transition-colors">Skills</a>
+                <a href="#tools-portal" class="hover:text-brand-cyan transition-colors">Tool & Portal</a>
+                <a href="#works" class="hover:text-brand-cyan transition-colors">Works</a>
+                <a href="#strengths" class="hover:text-brand-cyan transition-colors">Strengths</a>
+                <a href="#socials" class="hover:text-brand-cyan transition-colors">Socials</a>
+            </nav>
+
+            <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white text-2xl focus:outline-none" aria-label="Toggle Navigation Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-b border-brand-border px-6 py-4 space-y-4">
+            <a href="#about" class="block text-gray-300 hover:text-brand-cyan py-1">About</a>
+            <a href="#skills" class="block text-gray-300 hover:text-brand-cyan py-1">Skills</a>
+            <a href="#tools-portal" class="block text-gray-300 hover:text-brand-cyan py-1">Tool & Portal</a>
+            <a href="#works" class="block text-gray-300 hover:text-brand-cyan py-1">Works</a>
+            <a href="#strengths" class="block text-gray-300 hover:text-brand-cyan py-1">Strengths</a>
+            <a href="#socials" class="block text-gray-300 hover:text-brand-cyan py-1">Socials</a>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="relative min-h-[85vh] flex items-center justify-center px-6 py-20">
+            <div class="max-w-4xl mx-auto text-center space-y-8">
+                
+                <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-tight pt-6">
+                    奥苑 蓮冬
+                    <span class="block text-2xl sm:text-3xl font-medium text-gray-400 mt-3 tracking-normal">Rento Okuzono</span>
+                </h1>
+                
+                <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed font-light">
+                    表現力の追求と開発プロセスの可視化を両立する<br class="hidden sm:inline">
+                    ゲームプログラマー
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-4 pt-4">
+                    <a href="#works" class="px-8 py-4 rounded-xl bg-gradient-to-r from-brand-cyan to-blue-600 text-black font-bold text-base hover:opacity-90 transition-all glow-cyan flex items-center justify-center">
+                        制作実績を見る
+                    </a>
+                    <a href="#tools-portal" class="px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-400 to-teal-600 text-black font-bold text-base hover:opacity-90 transition-all glow-emerald flex items-center justify-center">
+                        スプレッドシート連動ツール
+                    </a>
+                </div>
+            </div>
+
+            <!-- Scroll Down Arrow -->
+            <a href="#about" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-gray-400 hover:text-brand-cyan transition-colors animate-bounce" aria-label="Scroll to About Section">
+                <i class="fa-solid fa-chevron-down text-2xl"></i>
+            </a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 px-6 max-w-6xl mx-auto">
+            <div class="text-center mb-16 space-y-2">
+                <h2 class="text-xs font-bold tracking-widest text-brand-cyan uppercase">About Me</h2>
+                <p class="text-3xl font-extrabold text-white">自己紹介</p>
+            </div>
+
+            <div class="grid md:grid-cols-12 gap-8 items-stretch">
+                <!-- Main Bio Card -->
+                <div class="md:col-span-8 glass-panel p-8 rounded-2xl border border-brand-border space-y-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-4">
+                            熊本情報ITクリエイター専門学校 <span class="text-lg font-normal text-gray-300 ml-1">ゲームクリエイターコース</span>
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed text-base space-y-4">
+                            熊本情報ITクリエイター専門学校にてUnityを用いたゲーム開発を専攻。<br>
+                            個人開発およびチーム開発において、プロジェクトリーダーとして数多くのプロジェクトを牽引してきました。<br><br>
+                            C#による内部ロジックの実装にとどまらず、<strong class="text-brand-cyan font-semibold">Shader Graphを活用した開発</strong>によるグラフィック表現力の向上や、<strong class="text-emerald-400 font-semibold">スプレッドシートをバックエンドとしたタスク・ログ管理ポータル（バックログ機能を独自実装）の構築</strong>など、ゲームの品質向上とチーム全体の開発プロセス可視化・効率化の両面で成果を上げています。
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-brand-border/60">
+                        <div>
+                            <p class="text-xs text-gray-400">開発歴</p>
+                            <p class="text-xl font-bold text-white mt-1">3 年</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400">チーム役割</p>
+                            <p class="text-xl font-bold text-white mt-1">Project Leader</p>
+                        </div>
+                        <div class="col-span-2 sm:col-span-1">
+                            <p class="text-xs text-gray-400">メインエンジン</p>
+                            <p class="text-xl font-bold text-brand-cyan mt-1">Unity</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Highlights (Static Boxes) -->
+                <div class="md:col-span-4 space-y-4 flex flex-col justify-between">
+                    <div class="glass-card-static p-6 rounded-2xl">
+                        <div class="w-12 h-12 rounded-xl bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan text-xl mb-4">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-1">ロジック & シェーダー</h4>
+                        <p class="text-xs text-gray-400">C#による堅牢な設計から、Shader Graphを用いた視覚エフェクトまで幅広く対応。</p>
+                    </div>
+
+                    <div class="glass-card-static p-6 rounded-2xl">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl mb-4">
+                            <i class="fa-solid fa-table"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-1">タスク管理ポータル</h4>
+                        <p class="text-xs text-gray-400">スプレッドシートをバックエンドにBacklog機能を独自実装した進捗・ログ管理システム。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skill Set Section -->
+        <section id="skills" class="py-20 px-6 max-w-6xl mx-auto">
+            <div class="text-center mb-16 space-y-2">
+                <h2 class="text-xs font-bold tracking-widest text-brand-cyan uppercase">Skill Set</h2>
+                <p class="text-3xl font-extrabold text-white">使用言語・技術スタック</p>
+            </div>
+
+            <!-- CORE SKILLS (Featured) -->
+            <div class="mb-12">
+                <h3 class="text-xs font-bold text-brand-cyan tracking-wider uppercase mb-6 flex items-center gap-2">
+                    メインスキル
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- C# & Unity Card -->
+                    <div class="glass-panel p-6 sm:p-8 rounded-2xl border-l-4 border-l-brand-cyan">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-brand-cyan font-bold text-xl">
+                                    <i class="fa-solid fa-cubes"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-white">C# / Unity</h4>
+                                    <p class="text-xs text-gray-400">ゲーム開発メインエンジン</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-300 leading-relaxed mb-4">
+                            3年間の開発経験を誇る主軸技術。オブジェクト指向に基づいた汎用的なシステム設計、アニメーション制御、UI構築、物理挙動のチューニングを実践。
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-gray-300">ゲームロジック設計</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-gray-300">プロジェクトリーダー</span>
+                        </div>
+                    </div>
+
+                    <!-- Shader Graph Card -->
+                    <div class="glass-panel p-6 sm:p-8 rounded-2xl border-l-4 border-l-brand-purple">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-brand-pink font-bold text-xl">
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-white">Shader Graph</h4>
+                                    <p class="text-xs text-gray-400">表現力向上・シェーダー開発</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-300 leading-relaxed mb-4">
+                            UnityのShader Graphを活用したビジュアルエフェクト制作。質感表現やポストエフェクト、攻撃時のインパクト演出により世界観の構築に貢献。
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-gray-300">ビジュアルエフェクト</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-gray-300">表現力向上</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECONDARY SKILLS -->
+            <div>
+                <h3 class="text-xs font-bold text-gray-400 tracking-wider uppercase mb-6 flex items-center gap-2">
+                    その他の習得言語・ツール
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6 items-stretch">
+                    <!-- Languages Card -->
+                    <div class="glass-card-static p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-base font-bold text-white mb-4 flex items-center gap-2">
+                                <i class="fa-solid fa-code text-brand-cyan"></i> その他プログラミング言語
+                            </h4>
+                            <div class="flex flex-wrap gap-2.5">
+                                <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-medium text-gray-200 flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-blue-400"></span> C
+                                </span>
+                                <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-medium text-gray-200 flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-blue-500"></span> C++
+                                </span>
+                                <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-medium text-gray-200 flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-yellow-400"></span> Python
+                                </span>
+                                <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-medium text-gray-200 flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-yellow-300"></span> JavaScript
+                                </span>
+                                <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-medium text-gray-200 flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-orange-500"></span> HTML / CSS
+                                </span>
+                                <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-medium text-gray-200 flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-purple-400"></span> PHP
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools Card -->
+                    <div class="glass-card-static p-6 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-base font-bold text-white mb-4 flex items-center gap-2">
+                                <i class="fa-solid fa-toolbox text-brand-pink"></i> 開発ツール・ソフトウェア
+                            </h4>
+                            <div class="flex flex-wrap gap-2.5">
+                                <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-medium text-gray-200 flex items-center gap-2">
+                                    <i class="fa-solid fa-cube text-orange-400"></i> Blender (3Dモデリング)
+                                </span>
+                                <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-medium text-gray-200 flex items-center gap-2">
+                                    <i class="fa-brands fa-github text-white"></i> GitHub (バージョン管理)
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tool & Portal Section -->
+        <section id="tools-portal" class="py-20 px-6 max-w-6xl mx-auto">
+            <div class="text-center mb-16 space-y-2">
+                <h2 class="text-xs font-bold tracking-widest text-emerald-400 uppercase">Workflow & Tool Development</h2>
+                <p class="text-3xl font-extrabold text-white">開発効率化・タスク管理ポータル実績</p>
+                <p class="text-xs text-gray-400 mt-2">ゲーム制作にとどまらず、チーム全体の生産性を向上させる仕組みづくりを主導しています</p>
+            </div>
+
+            <!-- Clickable Portal Card -->
+            <a href="https://script.google.com/macros/s/AKfycbzk_p9UejK0GaGBZP66g36n-k_vdKcf5d6UEMRlnqV711NXLDNR13Iys1GtlRpuz5ih/exec" target="_blank" rel="noopener noreferrer" class="block portal-card p-8 sm:p-10 rounded-2xl border-l-4 border-l-emerald-400 space-y-6 group cursor-pointer">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-brand-border pb-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-2xl font-bold group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-table"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors flex items-center gap-2">
+                                スプレッドシート連動 タスク・ログ管理ポータルシステム
+                                <i class="fa-solid fa-arrow-up-right-from-square text-sm text-gray-400 group-hover:text-emerald-400"></i>
+                            </h3>
+                            <p class="text-sm text-emerald-400 font-medium">Google Sheets API × Backlog機能独自実装</p>
+                        </div>
+                    </div>
+                    <span class="self-start md:self-auto text-xs font-semibold px-4 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 group-hover:bg-emerald-500 group-hover:text-black transition-colors">
+                        ポータルサイトを開く
+                    </span>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 text-sm text-gray-300 relative">
+                    <!-- Left: Approach -->
+                    <div class="space-y-4 md:pr-6">
+                        <h4 class="text-base font-bold text-white">アプローチ</h4>
+                        <p class="leading-relaxed">
+                            チーム開発におけるタスク管理や進捗把握の煩雑さを解消するため、スプレッドシートをバックエンドに活用し、Backlogの要件を独自に落とし込んだタスク・ログ管理ポータルシステムを構築しました。スプレッドシート上のデータをリアルタイムかつ円滑に同期・管理できる仕組みを実現しています。
+                        </p>
+                    </div>
+
+                    <!-- Center Subtle Green Gradient Divider Line -->
+                    <div class="hidden md:block absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[1px] bg-gradient-to-b from-transparent via-emerald-500/50 to-transparent"></div>
+
+                    <!-- Right: Features -->
+                    <div class="space-y-4 md:pl-6">
+                        <h4 class="text-base font-bold text-white">独自実装した主な機能</h4>
+                        <ul class="space-y-2.5 text-gray-300">
+                            <li class="flex items-start gap-2.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 shrink-0 inline-block"></span>
+                                <span><strong>タスク管理</strong>: ステータス遷移、担当者割り当て、優先度設定の一元化</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 shrink-0 inline-block"></span>
+                                <span><strong>リアルタイム同期パイプライン</strong>: スプレッドシートデータとのシームレスな自動連携</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 shrink-0 inline-block"></span>
+                                <span><strong>ログ管理</strong>: 日報やガントチャートによる活動記録の可視化と進捗遅れの防止</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+        </section>
+
+        <!-- Works Section -->
+        <section id="works" class="py-20 px-6 max-w-6xl mx-auto">
+            <div class="text-center mb-16 space-y-2">
+                <h2 class="text-xs font-bold tracking-widest text-brand-cyan uppercase">Works</h2>
+                <p class="text-3xl font-extrabold text-white">制作実績</p>
+                <p class="text-xs text-gray-400 mt-2">※具体的な制作物やリポジトリ情報は現在準備中となります</p>
+            </div>
+
+            <div class="grid md:grid-cols-1 gap-8 max-w-2xl mx-auto">
+                <div class="glass-card-static rounded-2xl overflow-hidden group cursor-pointer" onclick="openModal('work1')">
+                    <div class="h-56 bg-gradient-to-br from-gray-800 to-gray-900 relative flex items-center justify-center overflow-hidden">
+                        <i class="fa-solid fa-gamepad text-6xl text-gray-700 group-hover:scale-110 group-hover:text-brand-cyan transition-all duration-300"></i>
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
+                        <span class="absolute top-4 left-4 text-xs font-bold px-3 py-1 rounded-full bg-brand-cyan/20 text-brand-cyan border border-brand-cyan/30 backdrop-blur-md">
+                            チーム開発 / プロジェクトリーダー
+                        </span>
+                    </div>
+                    <div class="p-8 space-y-4">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-brand-cyan transition-colors">
+                            3Dアクションゲーム（開発中）
+                        </h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            C#による中核アクションロジックの実装と、Shader Graphによる攻撃エフェクトの構築を担当した3Dアクション作品。
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="text-xs px-2.5 py-1 rounded bg-white/5 text-gray-300 border border-white/10">Unity</span>
+                            <span class="text-xs px-2.5 py-1 rounded bg-white/5 text-gray-300 border border-white/10">C#</span>
+                            <span class="text-xs px-2.5 py-1 rounded bg-white/5 text-gray-300 border border-white/10">Shader Graph</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strengths Section -->
+        <section id="strengths" class="py-20 px-6 max-w-6xl mx-auto">
+            <div class="text-center mb-16 space-y-2">
+                <h2 class="text-xs font-bold tracking-widest text-brand-cyan uppercase">Strengths</h2>
+                <p class="text-3xl font-extrabold text-white">エンジニアとしての強み</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-panel p-8 rounded-2xl border border-brand-border space-y-4 relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-brand-cyan flex items-center justify-center text-xl font-bold">
+                        01
+                    </div>
+                    <h3 class="text-xl font-bold text-white">プロジェクト推進力</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        個人・チーム開発でリーダーを経験。全体のスケジュール管理から技術的サポートまで、チームを力強く牽引します。
+                    </p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-2xl border border-brand-border space-y-4 relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-brand-pink flex items-center justify-center text-xl font-bold">
+                        02
+                    </div>
+                    <h3 class="text-xl font-bold text-white">グラフィック表現力</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        単なるプログラム実装に留まらず、Shader Graphを駆使した固有のビジュアル表現でゲーム全体のクオリティを高めます。
+                    </p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-2xl border border-brand-border space-y-4 relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl font-bold">
+                        03
+                    </div>
+                    <h3 class="text-xl font-bold text-white">開発プロセスの効率化</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        自作のタスク管理ポータル等を通じて、開発メンバー全員がスムーズにイテレーションを回せる環境構築を実践します。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Socials & Contacts Section (Footer Area) -->
+        <section id="socials" class="py-16 border-t border-brand-border/60 glass-panel">
+            <div class="max-w-6xl mx-auto px-6 text-center space-y-8">
+                <div class="space-y-2">
+                    <h3 class="text-2xl font-bold text-white">奥苑 蓮冬 <span class="text-base font-normal text-gray-400">(Rento Okuzono)</span></h3>
+                    <p class="text-sm text-gray-400">Kumamoto Information IT Creator College</p>
+                </div>
+
+                <!-- SNS Icon Buttons (GitHub / X / YouTube / Mail) -->
+                <div class="flex flex-wrap justify-center items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl glass-card-static flex items-center justify-center text-xl text-gray-600 opacity-40 cursor-not-allowed" title="準備中">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <div class="w-12 h-12 rounded-xl glass-card-static flex items-center justify-center text-xl text-gray-600 opacity-40 cursor-not-allowed" title="準備中">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </div>
+                    <div class="w-12 h-12 rounded-xl glass-card-static flex items-center justify-center text-xl text-gray-600 opacity-40 cursor-not-allowed" title="準備中">
+                        <i class="fa-brands fa-youtube"></i>
+                    </div>
+                    <div class="w-12 h-12 rounded-xl glass-card-static flex items-center justify-center text-xl text-gray-600 opacity-40 cursor-not-allowed" title="準備中">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                </div>
+
+                <div class="pt-6 border-t border-white/5 text-xs text-gray-500">
+                    &copy; 2026 Rento Okuzono. All Rights Reserved.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Work Detail Modal -->
+    <div id="work-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div class="glass-panel max-w-2xl w-full rounded-2xl overflow-hidden border border-brand-border space-y-6 max-h-[90vh] overflow-y-auto">
+            <div class="p-6 border-b border-brand-border flex items-center justify-between">
+                <h3 id="modal-title" class="text-xl font-bold text-white">作品詳細</h3>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-white text-xl" aria-label="Close Modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <div class="p-6 space-y-4 text-sm text-gray-300">
+                <div class="aspect-video bg-gray-900 rounded-xl flex items-center justify-center border border-white/10">
+                    <i class="fa-solid fa-gamepad text-4xl text-gray-700"></i>
+                </div>
+                <div id="modal-content" class="space-y-4">
+                    <!-- Modal text populated dynamically -->
+                </div>
+            </div>
+
+            <!-- Action Buttons (Unimplemented - Deactivated) -->
+            <div class="p-6 border-t border-brand-border flex flex-wrap sm:flex-nowrap gap-3">
+                <div class="flex-1 px-4 py-3 rounded-xl glass-card-static text-gray-500 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 opacity-40 cursor-not-allowed select-none">
+                    <i class="fa-solid fa-play"></i> WebGLで遊ぶ (準備中)
+                </div>
+                <div class="flex-1 px-4 py-3 rounded-xl glass-card-static text-gray-500 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 opacity-40 cursor-not-allowed select-none">
+                    <i class="fa-brands fa-github"></i> GitHub (準備中)
+                </div>
+                <div class="flex-1 px-4 py-3 rounded-xl glass-card-static text-gray-500 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 opacity-40 cursor-not-allowed select-none">
+                    <i class="fa-brands fa-youtube"></i> 紹介動画 (準備中)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 外部JavaScriptファイルの読み込み -->
+    <script src="script.js"></script>
+</body>
+</html>
